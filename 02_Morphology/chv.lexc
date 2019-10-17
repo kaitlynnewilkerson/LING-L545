@@ -1,0 +1,150 @@
+!Multichar_Symbols
+
+!%<n%>		! Noun
+
+!LEXICON Root
+
+!урам%<n%>:урам # ; ! "улица", "street" 
+!пахча%<n%>:пахча # ; ! "сац", "garden"
+!хула%<n%>:хула # ; ! "город", "city"
+!канаш%<n%>:канаш # ; ! "совет", "council"
+
+
+Multichar_Symbols
+
+%<n%>                ! Имя существительное, Noun
+%<pl%>               ! Множественное число, Plural
+
+%>                   ! Граница морфемы, Morpheme boundary
+%{A%}		     ! placeholder/archiphoneme [a] or [e] in Chuvash
+%{Ă%}	     ! genetive morpheme placeholder for singular and plural
+%{м%}	     ! plural morpheme 
+%{ъ%}		     ! forces back vowel harmony
+
+%<v%>                ! Глагол, Verb
+%<tv%>               ! Переходный, Transitive
+%<aor%>              ! Аорист, Aorist
+%<m%>                ! Мужский род, Masculine
+%<f%>                ! Женский род, Feminine
+%<nt%>               ! Средный род, Neuter
+%<pl%>               ! Множественное число, Plural
+%<der_лӑх%>	     ! Derivational suffix
+%<guess%>
+
+
+@P.Gender.Msc@       ! Согласование мужского рода, Masculine agreement
+@P.Gender.Fem@       ! Согласование женского рода, Feminine agreement
+@P.Gender.Neu@       ! Согласование средного рода, Neuter agreement
+@P.Gender.Plu@       ! Согласование множественного падежа, Plural agreement
+
+@R.Gender.Msc@       ! Согласование мужского рода
+@R.Gender.Fem@       ! Согласование женского рода
+@R.Gender.Neu@       ! Согласование средного рода
+@R.Gender.Plu@       ! Согласование множественного падежа
+
+LEXICON Root
+
+Nouns ; 
+
+Prefixes ;
+
+Guesser ;
+
+
+LEXICON Guesser
+
+🂡%<guess%>:🂡 N ;
+
+
+LEXICON Nouns
+
+урам:урам N ;     ! "улица", "street"
+пахча:пахча N ;   ! "сад", "garden"
+хула:хула N ;     ! "город", "city"
+канаш:канаш N ;   ! "совет", "council"
+тӗс:тӗс N ;       ! "вид", "aspect"
+патша:патша N ;   ! "царь", "tsar"
+куҫ:куҫ N ;       ! "глаз", "eye"
+патшалӑх:патшалӑх N ;	! "государство", "state"
+специалист:специалист%{ъ%} N ; ! "специалист"
+
+LEXICON Prefixes
+
+@P.Gender.Msc@:@P.Gender.Msc@в Verbs ;
+@P.Gender.Fem@:@P.Gender.Fem@й Verbs ;
+@P.Gender.Neu@:@P.Gender.Neu@б Verbs ;
+@P.Gender.Plu@:@P.Gender.Plu@р Verbs ;
+
+LEXICON AGR
+
+@R.Gender.Msc@%<m%>:@R.Gender.Msc@ # ;
+@R.Gender.Fem@%<f%>:@R.Gender.Fem@ # ;
+@R.Gender.Neu@%<nt%>:@R.Gender.Neu@ # ;
+@R.Gender.Plu@%<pl%>:@R.Gender.Plu@ # ;
+
+LEXICON V-TV
+
+%<v%>%<tv%>%<aor%>:%>уна AGR ;
+
+LEXICON Verbs
+
+бицине:иц V-TV ; ! "говорить", "say"
+
+LEXICON CASES
+%<nom%>: #;
+%<ins%>:%>п%{A%} # ; 
+%<gen%>:%>%{Ă%}н # ; 	! genetive morpheme after both singular and plural
+
+LEXICON PLURAL
+		CASES; 
+%<pl%>:%>се%{м%}   CASES;
+
+LEXICON SUBST 
+
+PLURAL ;
+
+LEXICON DER-N
+
+%<der_лӑх%>:%>л%{Ă%}х SUBST ;
+%<der_лӑх%>:%>л%{Ă%}х SUBST "weight: 1.0" ; 
+
+LEXICON N
+
+%<n%>: PLURAL; 
+%<n%>: SUBST ;
+%<n%>: DER-N ;
+
+
+LEXICON NUM-DIGIT
+
+%<num%>:%- CASES ;
+
+LEXICON LAST-DIGIT
+
+1:1%{э%}%{л%}    NUM-DIGIT ; ! "пӗр" 
+2:2%{с%}%{э%}    NUM-DIGIT ; ! "иккӗ" 
+3:3%{с%}%{э%}    NUM-DIGIT ; ! "виҫҫӗ" 
+4:4%{с%}%{а%}    NUM-DIGIT ; ! "тӑваттӑ" 
+5:5%{э%}%{с%}    NUM-DIGIT ; ! "пиллӗк" 
+6:6%{с%}%{а%}    NUM-DIGIT ; ! "улттӑ" 
+7:7%{с%}%{э%}    NUM-DIGIT ; ! "ҫиччӗ" 
+8:8%{э%}%{л%}    NUM-DIGIT ; ! "саккӑр" 
+9:9%{э%}%{л%}    NUM-DIGIT ; ! "тӑххӑр" 
+
+LEXICON LOOP
+
+                 LAST-DIGIT ; 
+                 DIGITLEX ; 
+
+LEXICON DIGITLEX
+
+%0:%0 LOOP ;
+1:1   LOOP ;
+2:2   LOOP ;
+3:3   LOOP ;
+4:4   LOOP ;
+5:5   LOOP ;
+6:6   LOOP ;
+7:7   LOOP ;
+8:8   LOOP ;
+9:9   LOOP ;
