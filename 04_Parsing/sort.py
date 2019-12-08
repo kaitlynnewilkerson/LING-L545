@@ -75,6 +75,7 @@ for i in langLoc:
     pair = sort(file, OV, VO)
     ovValues.append(pair[0])
     voValues.append(pair[1])
+    # uncomment if you want to see the values associated with each language
     #lang[i].append(pair)
 
 
@@ -91,7 +92,4 @@ plt.xlabel('OV') # Set the x and y axis labels
 plt.ylabel('VO')
 for i in labels:  # Add labels to each of the points
     plt.text(x[i]-0.03, y[i]-0.03, labels[i], fontsize=9)
-plt.savefig(sys.argv[1])
 plt.show()
-
-## figure out how to get the graph to show up??
